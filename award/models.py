@@ -13,3 +13,17 @@ class Profile(models.Model):
     image = models.ImageField(default='default.jpg', upload_to='profile_pics/')
     bio = models.CharField(max_length=255, blank=True)
 
+    def __str__(self):
+        return f'{self.user.username} Profile'
+
+    class Meta:
+        db_table = 'profile'
+
+    @receiver(post_save, sender=User)
+    def update_create_profile(sender,instance,created, **kwargs):
+        try:
+            instance.profile.save()
+        except ObjectDoesNotExist:
+            Profile.objects.create(user=instance)
+
+
