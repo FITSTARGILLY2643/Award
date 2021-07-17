@@ -56,3 +56,12 @@ class Projects(models.Model):
         project = cls.objects.filter(title__icontains=search_term)
         return project
 
+    @classmethod
+    def get_project(cls,id):
+        try:
+            project = Projects.objects.get(pk=id)
+            return project
+        except ObjectDoesNotExist:
+            raise Http404()
+        
+
