@@ -26,4 +26,7 @@ class Profile(models.Model):
         except ObjectDoesNotExist:
             Profile.objects.create(user=instance)
 
+    def save_profile(self):
+        self.save()
+
 
