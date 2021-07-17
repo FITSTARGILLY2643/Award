@@ -125,6 +125,14 @@ class ProjectList(APIView):
         return Response(serializers.data)
         permission_classes = (IsAdminOrReadOnly,)
 
+class ProfileList(APIView):
+    def get(self, request, format=None):
+        allprofiles = Profile.objects.all()
+        serializers = ProfileSerializer(allprofiles, many=True)
+        return Response(serializers.data)
+        permission_classes = (IsAdminOrReadOnly,)
+
+
 
 
 
