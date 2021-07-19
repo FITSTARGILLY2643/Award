@@ -11,7 +11,7 @@ from .permissions import IsAdminOrReadOnly
 
 # Create your views here.
 
-@login_required(login_url='/accounts/login/')
+
 def home(request):
     projects = Projects.objects.all()
     context = {
