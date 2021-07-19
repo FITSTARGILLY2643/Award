@@ -18,6 +18,7 @@ This is a django-python application where developers can upload their projects a
 ## Support and contact details
 Reach me on: +254 725060098 or fitstargilii1194@gmail.com
 ## Live Link
+https://award-app.herokuapp.com/
 
 ### MIT License
 
