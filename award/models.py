@@ -52,9 +52,9 @@ class Projects(models.Model):
         self.delete()
 
     @classmethod
-    def search_projects(cls,search_term):
-        project = cls.objects.filter(title__icontains=search_term)
-        return project
+    def search_projects(cls, title):
+        projects = cls.objects.filter(title__icontains=title).all()
+        return projects
 
     @classmethod
     def get_project(cls,id):
