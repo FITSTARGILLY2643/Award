@@ -18,20 +18,20 @@
         <div class="card">
             <div class="card-body">
                 <div class="profile-image">
-                    <img class="profile-image" src="{{ project.author.profile.image.url }}">
+                    <img class="profile-image" style="border-radius: 60%; height:4rem; width:4rem;" src="{{ project.author.profile.image.url }}">
                 </div>
-                <h1>{{project.author}}</h1>
-                <img class="w-100" src="{{project.image.url}}" alt="projects">
+                <h6>{{project.author}}</h6>
+                <img height="300px" width="100%" src="{{project.image.url}}" alt="projects">
                 <br><br>
-                <h1 class="ml-3">Project Title</h1>
+                
+                <h4 class="ml-2">Title: {{project.title}}</h4>
+               
                 <hr>
-                <h4 class="mt-3 ml-3"> {{project.title}}</h4>
-                <h1 class="ml-3 mt-3">Project Description</h1>
-                <hr>
-                <h4 class="mt-3 ml-5">~ {{project.description}}</h>
+                <p class="ml-2" >Description</p>
+                <p class="ml-2" style="color:grey">{{project.description}}</p>
                     <hr>
-                    <h3 class="mt-5 ml-5 text-info">Posted On {{project.created_date}}</h3>
-                    <a class="ml-5 text-black" href="{{project.link}}"><input class="btn btn-info text-black"
+                    <p class="ml-2" style="color:grey">Posted On {{project.created_date}}</p>
+                    <a class="ml-5 text-black" href="{{project.link}}"><input class="btn btn-sm btn-outline-info text-black"
                             type="button" value="Visit Site"></a>
 
             </div>
